@@ -15,7 +15,7 @@ function Registration() {
         password: Yup.string().min(4).max(20).required()
     })
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/auth", data).then(() => {
+        axios.post("https://full-stack-api-gorima-1578d203665e.herokuapp.com/auth", data).then(() => {
             navigate('/login')
         });
     };

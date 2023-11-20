@@ -15,7 +15,7 @@ function App() {
      status: false});
 
   useEffect(() => {
-    axios.get('http://localhost:3001/auth/auth', {
+    axios.get('https://full-stack-api-gorima-1578d203665e.herokuapp.com/auth/auth', {
       headers: {
         accessToken: localStorage.getItem('accessToken')
       }

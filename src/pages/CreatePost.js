@@ -17,7 +17,7 @@ function CreatePost() {
         username: Yup.string().min(3).max(15).required()
     })
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/posts", data).then((response) => {
+        axios.post("https://full-stack-api-gorima-1578d203665e.herokuapp.com/posts", data).then((response) => {
             navigate("/");
           })
     }

@@ -9,11 +9,11 @@ function Post() {
     const [newComment, setNewComment] = useState("");
     const { authState } = useContext(AuthContext); 
     useEffect(() => {
-        axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+        axios.get(`https://full-stack-api-gorima-1578d203665e.herokuapp.com/posts/byId/${id}`).then((response) => {
           setPostObject(response.data);
         });
 
-        axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+        axios.get(`https://full-stack-api-gorima-1578d203665e.herokuapp.com/comments/${id}`).then((response) => {
           setComments(response.data);
         });
     }, []);
@@ -21,7 +21,7 @@ function Post() {
 
   const addComment = (() =>  {
     axios
-    .post("http://localhost:3001/comments", {
+    .post("https://full-stack-api-gorima-1578d203665e.herokuapp.com/comments", {
       commentBody: newComment,
        PostId: id },
        {
@@ -40,7 +40,7 @@ function Post() {
     }) 
   });
   const deleteComment = (id) => {
-    axios.delete(`http://localhost:3001/comments/${id}`, {
+    axios.delete(`https://full-stack-api-gorima-1578d203665e.herokuapp.com/comments/${id}`, {
       headers:{
         accessToken: localStorage.getItem('accessToken')
       }

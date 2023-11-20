@@ -8,7 +8,7 @@ function Home() {
     const [listOfPosts, setListOfPosts] = useState([]);
     let navigate = useNavigate();
     useEffect(() => {
-      axios.get("http://localhost:3001/posts").then((response) => {
+      axios.get("https://full-stack-api-gorima-1578d203665e.herokuapp.com/posts").then((response) => {
         setListOfPosts(response.data);
       })
     }, [])

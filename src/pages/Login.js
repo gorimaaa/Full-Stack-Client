@@ -9,7 +9,7 @@ function Login() {
     const navigate = useNavigate();
     const login = () => {
         const data = {username: username, password: password};
-        axios.post("http://localhost:3001/auth/login", data).then((response) => {
+        axios.post("https://full-stack-api-gorima-1578d203665e.herokuapp.com/auth/login", data).then((response) => {
             if(response.data.error){
                 alert(response.data.error);
             }else{
